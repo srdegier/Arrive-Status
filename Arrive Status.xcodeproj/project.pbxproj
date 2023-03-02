@@ -13,9 +13,11 @@
 		871CA3DD29B10042005C4F2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 871CA3DB29B10042005C4F2A /* Main.storyboard */; };
 		871CA3DF29B10043005C4F2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 871CA3DE29B10043005C4F2A /* Assets.xcassets */; };
 		871CA3E229B10043005C4F2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 871CA3E029B10043005C4F2A /* LaunchScreen.storyboard */; };
+		BE1A47EBAF074AC7108A1CEE /* Pods_Arrive_Status.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 330AA74B71E2F10A4EC5FA09 /* Pods_Arrive_Status.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		330AA74B71E2F10A4EC5FA09 /* Pods_Arrive_Status.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arrive_Status.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		871CA3D229B10042005C4F2A /* Arrive Status.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Arrive Status.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		871CA3D529B10042005C4F2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		871CA3D729B10042005C4F2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		871CA3DE29B10043005C4F2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		871CA3E129B10043005C4F2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		871CA3E329B10043005C4F2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C23C538B8079630013F0D69F /* Pods-Arrive Status.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arrive Status.release.xcconfig"; path = "Target Support Files/Pods-Arrive Status/Pods-Arrive Status.release.xcconfig"; sourceTree = "<group>"; };
+		C4567E30CF97BCF3B1AC9794 /* Pods-Arrive Status.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arrive Status.debug.xcconfig"; path = "Target Support Files/Pods-Arrive Status/Pods-Arrive Status.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE1A47EBAF074AC7108A1CEE /* Pods_Arrive_Status.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11C75DEFC0ED49B40E1536C1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C4567E30CF97BCF3B1AC9794 /* Pods-Arrive Status.debug.xcconfig */,
+				C23C538B8079630013F0D69F /* Pods-Arrive Status.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		871CA3C929B10042005C4F2A = {
 			isa = PBXGroup;
 			children = (
 				871CA3D429B10042005C4F2A /* Arrive Status */,
 				871CA3D329B10042005C4F2A /* Products */,
+				11C75DEFC0ED49B40E1536C1 /* Pods */,
+				F624BDB841B448A66B9FE947 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +84,14 @@
 			path = "Arrive Status";
 			sourceTree = "<group>";
 		};
+		F624BDB841B448A66B9FE947 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				330AA74B71E2F10A4EC5FA09 /* Pods_Arrive_Status.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 871CA3E629B10043005C4F2A /* Build configuration list for PBXNativeTarget "Arrive Status" */;
 			buildPhases = (
+				68144FAD655F3D9BDC285FB4 /* [CP] Check Pods Manifest.lock */,
 				871CA3CE29B10042005C4F2A /* Sources */,
 				871CA3CF29B10042005C4F2A /* Frameworks */,
 				871CA3D029B10042005C4F2A /* Resources */,
+				7F7FC2361F0B0A0E1CDD600A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		68144FAD655F3D9BDC285FB4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Arrive Status-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F7FC2361F0B0A0E1CDD600A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Arrive Status/Pods-Arrive Status-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Arrive Status/Pods-Arrive Status-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Arrive Status/Pods-Arrive Status-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		871CA3CE29B10042005C4F2A /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		871CA3E729B10043005C4F2A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4567E30CF97BCF3B1AC9794 /* Pods-Arrive Status.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,6 +380,7 @@
 		};
 		871CA3E829B10043005C4F2A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C23C538B8079630013F0D69F /* Pods-Arrive Status.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
