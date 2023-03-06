@@ -9,16 +9,28 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Dashboard View Controller-->
+        <!--Destinations View Controller-->
         <scene sceneID="Sdu-rR-7Pk">
             <objects>
-                <viewController id="OUw-SZ-gVT" customClass="DashboardViewController" customModule="Arrive_Status" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OUw-SZ-gVT" customClass="DestinationsViewController" customModule="Arrive_Status" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4i4-7F-fVw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8c5-zj-POg">
+                                <rect key="frame" x="0.0" y="47" width="375" height="96"/>
+                                <items>
+                                    <navigationItem title="Destinations" id="TAl-mH-tiz">
+                                        <barButtonItem key="rightBarButtonItem" title="Add" image="plus" catalog="system" id="gwi-Cc-rw1">
+                                            <connections>
+                                                <action selector="addDestinationButtonPressed:" destination="OUw-SZ-gVT" id="Cvh-yu-h8G"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="J5d-dM-gdC">
-                                <rect key="frame" x="0.0" y="47" width="375" height="731"/>
+                                <rect key="frame" x="10" y="168" width="355" height="610"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Rb5-Nh-EMF">
                                     <size key="itemSize" width="130" height="130"/>
@@ -27,7 +39,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DestinationCounterCollectionViewCell" id="evh-c9-abu" customClass="DestinationCounterCollectionViewCell" customModule="Arrive_Status" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DestinationCollectionViewCell" id="evh-c9-abu" customClass="DestinationCollectionViewCell" customModule="Arrive_Status" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="5Mr-Q1-C4d">
@@ -67,22 +79,26 @@
                         <viewLayoutGuide key="safeArea" id="48Q-CI-UtT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="8c5-zj-POg" firstAttribute="top" secondItem="48Q-CI-UtT" secondAttribute="top" id="52y-u9-8sA"/>
+                            <constraint firstItem="J5d-dM-gdC" firstAttribute="top" secondItem="8c5-zj-POg" secondAttribute="bottom" constant="25" id="Exe-9o-Aim"/>
                             <constraint firstItem="48Q-CI-UtT" firstAttribute="bottom" secondItem="J5d-dM-gdC" secondAttribute="bottom" id="HIl-dq-VZO"/>
-                            <constraint firstItem="48Q-CI-UtT" firstAttribute="trailing" secondItem="J5d-dM-gdC" secondAttribute="trailing" id="NBH-TG-WgZ"/>
-                            <constraint firstItem="J5d-dM-gdC" firstAttribute="top" secondItem="48Q-CI-UtT" secondAttribute="top" id="i3t-ev-shm"/>
-                            <constraint firstItem="J5d-dM-gdC" firstAttribute="leading" secondItem="48Q-CI-UtT" secondAttribute="leading" id="uxU-GO-0NG"/>
+                            <constraint firstItem="8c5-zj-POg" firstAttribute="leading" secondItem="48Q-CI-UtT" secondAttribute="leading" id="Lr2-p9-ieh"/>
+                            <constraint firstItem="48Q-CI-UtT" firstAttribute="trailing" secondItem="J5d-dM-gdC" secondAttribute="trailing" constant="10" id="NBH-TG-WgZ"/>
+                            <constraint firstItem="48Q-CI-UtT" firstAttribute="trailing" secondItem="8c5-zj-POg" secondAttribute="trailing" id="tlf-Ze-d5m"/>
+                            <constraint firstItem="J5d-dM-gdC" firstAttribute="leading" secondItem="48Q-CI-UtT" secondAttribute="leading" constant="10" id="uxU-GO-0NG"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="destinationCounterCollectionView" destination="J5d-dM-gdC" id="lLz-nN-Qg9"/>
+                        <outlet property="destinationCollectionView" destination="J5d-dM-gdC" id="NQw-a3-QhJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nfn-9j-XyC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-428" y="-802"/>
+            <point key="canvasLocation" x="-543" y="-804"/>
         </scene>
     </scenes>
     <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

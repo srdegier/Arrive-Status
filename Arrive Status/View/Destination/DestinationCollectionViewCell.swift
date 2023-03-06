@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DestinationCounterCollectionViewCell: UICollectionViewCell {
+class DestinationCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var counterLabel: UILabel!
     
