@@ -14,13 +14,14 @@ class DestinationsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.title = "Destinations"
         self.destinationCollectionView.dataSource = self
     }
     
     @IBAction func addDestinationButtonPressed(_ sender: Any) {
         print("!@Naar de nieuwe view")
-//        let vc = NewViewController()
-//        self.navigationController?.pushViewController(vc, animated: true)
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddDestinationViewController") as! AddDestinationViewController
+                navigationController?.pushViewController(vc, animated: true)
     }
 }
 

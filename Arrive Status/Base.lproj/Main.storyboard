@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OUw-SZ-gVT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TmR-zD-79q">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -9,28 +9,19 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Destinations View Controller-->
+        <!--Destinations-->
         <scene sceneID="Sdu-rR-7Pk">
             <objects>
-                <viewController id="OUw-SZ-gVT" customClass="DestinationsViewController" customModule="Arrive_Status" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DestinationsViewController" id="OUw-SZ-gVT" customClass="DestinationsViewController" customModule="Arrive_Status" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4i4-7F-fVw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8c5-zj-POg">
-                                <rect key="frame" x="0.0" y="47" width="375" height="96"/>
-                                <items>
-                                    <navigationItem title="Destinations" id="TAl-mH-tiz">
-                                        <barButtonItem key="rightBarButtonItem" title="Add" image="plus" catalog="system" id="gwi-Cc-rw1">
-                                            <connections>
-                                                <action selector="addDestinationButtonPressed:" destination="OUw-SZ-gVT" id="Cvh-yu-h8G"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
+                                <rect key="frame" x="0.0" y="143" width="375" height="44"/>
                             </navigationBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="J5d-dM-gdC">
-                                <rect key="frame" x="10" y="168" width="355" height="610"/>
+                                <rect key="frame" x="10" y="212" width="355" height="566"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Rb5-Nh-EMF">
                                     <size key="itemSize" width="130" height="130"/>
@@ -88,13 +79,56 @@
                             <constraint firstItem="J5d-dM-gdC" firstAttribute="leading" secondItem="48Q-CI-UtT" secondAttribute="leading" constant="10" id="uxU-GO-0NG"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Destinations" id="nbQ-PI-dIC">
+                        <barButtonItem key="rightBarButtonItem" title="Add Destination" image="plus" catalog="system" id="981-cM-vUj" userLabel="Add Destination">
+                            <connections>
+                                <action selector="addDestinationButtonPressed:" destination="OUw-SZ-gVT" id="8ME-yS-eMq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="destinationCollectionView" destination="J5d-dM-gdC" id="NQw-a3-QhJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nfn-9j-XyC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-543" y="-804"/>
+            <point key="canvasLocation" x="1341.5999999999999" y="-804.67980295566508"/>
+        </scene>
+        <!--Add Destination View Controller-->
+        <scene sceneID="GuB-za-vuD">
+            <objects>
+                <viewController storyboardIdentifier="AddDestinationViewController" id="YPF-FH-dwH" customClass="AddDestinationViewController" customModule="Arrive_Status" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Oqb-oP-z74">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="GWT-1S-9uC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LfR-7f-f5a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2157.5999999999999" y="-805.41871921182269"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qqj-sw-nYP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TmR-zD-79q" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="u1N-HT-EtX">
+                        <rect key="frame" x="0.0" y="47" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZBN-KC-xzx">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="OUw-SZ-gVT" kind="relationship" relationship="rootViewController" id="Rrv-6N-f3N"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m2J-PN-zvt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="399.19999999999999" y="-804.67980295566508"/>
         </scene>
     </scenes>
     <resources>
