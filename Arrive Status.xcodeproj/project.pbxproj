@@ -9,12 +9,10 @@
 /* Begin PBXBuildFile section */
 		871CA3D629B10042005C4F2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871CA3D529B10042005C4F2A /* AppDelegate.swift */; };
 		871CA3D829B10042005C4F2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871CA3D729B10042005C4F2A /* SceneDelegate.swift */; };
-		871CA3DA29B10042005C4F2A /* DestinationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871CA3D929B10042005C4F2A /* DestinationsViewController.swift */; };
+		871CA3DA29B10042005C4F2A /* CounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871CA3D929B10042005C4F2A /* CounterViewController.swift */; };
 		871CA3DD29B10042005C4F2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 871CA3DB29B10042005C4F2A /* Main.storyboard */; };
 		871CA3DF29B10043005C4F2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 871CA3DE29B10043005C4F2A /* Assets.xcassets */; };
 		871CA3E229B10043005C4F2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 871CA3E029B10043005C4F2A /* LaunchScreen.storyboard */; };
-		875F71A029B169AC00A385F3 /* DestinationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875F719F29B169AC00A385F3 /* DestinationCollectionViewCell.swift */; };
-		875F71A429B64E1200A385F3 /* AddDestinationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875F71A329B64E1200A385F3 /* AddDestinationViewController.swift */; };
 		BE1A47EBAF074AC7108A1CEE /* Pods_Arrive_Status.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 330AA74B71E2F10A4EC5FA09 /* Pods_Arrive_Status.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,13 +21,11 @@
 		871CA3D229B10042005C4F2A /* Arrive Status.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Arrive Status.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		871CA3D529B10042005C4F2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		871CA3D729B10042005C4F2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		871CA3D929B10042005C4F2A /* DestinationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationsViewController.swift; sourceTree = "<group>"; };
+		871CA3D929B10042005C4F2A /* CounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewController.swift; sourceTree = "<group>"; };
 		871CA3DC29B10042005C4F2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		871CA3DE29B10043005C4F2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		871CA3E129B10043005C4F2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		871CA3E329B10043005C4F2A /* Info.plist */ = {isa = PBXFileReference; explicitFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
-		875F719F29B169AC00A385F3 /* DestinationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationCollectionViewCell.swift; sourceTree = "<group>"; };
-		875F71A329B64E1200A385F3 /* AddDestinationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDestinationViewController.swift; sourceTree = "<group>"; };
 		C23C538B8079630013F0D69F /* Pods-Arrive Status.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arrive Status.release.xcconfig"; path = "Target Support Files/Pods-Arrive Status/Pods-Arrive Status.release.xcconfig"; sourceTree = "<group>"; };
 		C4567E30CF97BCF3B1AC9794 /* Pods-Arrive Status.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arrive Status.debug.xcconfig"; path = "Target Support Files/Pods-Arrive Status/Pods-Arrive Status.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,7 +89,7 @@
 		875F719B29B1650800A385F3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				875F71A229B646BB00A385F3 /* Destination */,
+				875F71A229B646BB00A385F3 /* Counter */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -119,14 +115,12 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		875F71A229B646BB00A385F3 /* Destination */ = {
+		875F71A229B646BB00A385F3 /* Counter */ = {
 			isa = PBXGroup;
 			children = (
-				871CA3D929B10042005C4F2A /* DestinationsViewController.swift */,
-				875F71A329B64E1200A385F3 /* AddDestinationViewController.swift */,
-				875F719F29B169AC00A385F3 /* DestinationCollectionViewCell.swift */,
+				871CA3D929B10042005C4F2A /* CounterViewController.swift */,
 			);
-			path = Destination;
+			path = Counter;
 			sourceTree = "<group>";
 		};
 		F624BDB841B448A66B9FE947 /* Frameworks */ = {
@@ -252,11 +246,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				871CA3DA29B10042005C4F2A /* DestinationsViewController.swift in Sources */,
-				875F71A029B169AC00A385F3 /* DestinationCollectionViewCell.swift in Sources */,
+				871CA3DA29B10042005C4F2A /* CounterViewController.swift in Sources */,
 				871CA3D629B10042005C4F2A /* AppDelegate.swift in Sources */,
 				871CA3D829B10042005C4F2A /* SceneDelegate.swift in Sources */,
-				875F71A429B64E1200A385F3 /* AddDestinationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
