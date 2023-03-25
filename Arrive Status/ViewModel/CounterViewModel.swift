@@ -9,11 +9,13 @@ import Foundation
 
 class CounterViewModel {
     
-    let counter: Counter?
+    // is een singeleton van gemaakt omdat de delegate en controller er samen gebruik van maken
+    static let shared = CounterViewModel()
     
-    init(counter: Counter = Counter()) {
-        self.counter = counter
-    }
+    var counter: Counter?
+    let counterRepository = CounterRepository()
+        
+    // properties
     
     var title: String {
         return counter?.title ?? ""
@@ -25,10 +27,15 @@ class CounterViewModel {
     
     // methods
     
-    public func printMessage() {
+    public func increaseCounter() {
         // oftewel hier de counter increasen
-        print("!@", self.title)
-        print("!@Gebruiker is in de geofence gekomen!")
+        let increment = self.value + 1
+        self.counterRepository.updateCounterValue(increment: Int64(increment))
+        NotificationCenter.default.post(name:NSNotification.Name("counter.updated"), object: nil)
+    }
+    
+    public func getCounter() {
+        self.counter = self.counterRepository.getCounter()
     }
     
 }

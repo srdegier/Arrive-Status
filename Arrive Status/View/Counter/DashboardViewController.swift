@@ -10,12 +10,19 @@ import CoreLocation
 
 class DashboardViewController: UIViewController, CLLocationManagerDelegate {
     
+    @IBOutlet weak var counterTitleLabel: UILabel!
+    @IBOutlet weak var counterValueLabel: UILabel!
+    
     lazy var locationManager = CLLocationManager()
+    let counterViewModel = CounterViewModel.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(counterUpdated), name: NSNotification.Name ("counter.updated"), object: nil)
+        
         self.title = "Dashboard"
+
         
         self.locationManager.requestAlwaysAuthorization()
         
@@ -34,35 +41,29 @@ class DashboardViewController: UIViewController, CLLocationManagerDelegate {
             identifier: "School"
         )
         
-        
         geofenceRegion.notifyOnEntry = true
         geofenceRegion.notifyOnExit = true
         
         self.locationManager.startMonitoring(for: geofenceRegion)
-    
+        
+        self.updateView()
     }
     
-    @IBAction func addDestinationButtonPressed(_ sender: Any) {
-        print("!@Naar de nieuwe view")
-//        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddDestinationViewController") as! AddDestinationViewController
-//                navigationController?.pushViewController(vc, animated: true)
+    deinit {
+        NotificationCenter.default.removeObserver(self, name:NSNotification.Name("com.user.login.success"), object: nil)
     }
     
-    func monitorRegionAtLocation(center: CLLocationCoordinate2D, identifier: String ) {
-        // Make sure the devices supports region monitoring.
-        if CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
-            // Register the region.
-            let maxDistance = locationManager.maximumRegionMonitoringDistance
-            let region = CLCircularRegion(center: center,
-                 radius: 100, identifier: identifier)
-            region.notifyOnEntry = true
-            region.notifyOnExit = false
-       
-            locationManager.startMonitoring(for: region)
-            
-        }
+    @objc public func counterUpdated() {
+        self.updateView()
     }
     
+    public func updateView() {
+        self.counterViewModel.getCounter()
+        
+        self.counterTitleLabel.text = self.counterViewModel.title
+        self.counterValueLabel.text = String(self.counterViewModel.value)
+    }
+        
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

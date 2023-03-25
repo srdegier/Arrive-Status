@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var locationManager: CLLocationManager!
     var notificationCenter: UNUserNotificationCenter!
-    let viewModel = CounterViewModel()
+    let viewModel = CounterViewModel.shared
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
@@ -47,11 +47,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func handleEvent(forRegion region: CLRegion!) {
-        print("!@Check")
         // customize your notification content
         let content = UNMutableNotificationContent()
         content.title = "Gearriveerd!"
-        content.body = "Je bent momenteel op school. Dit is nu opgeteld."
+        content.body = "Je bent momenteel op school. Dit is nu opgeteld!."
         content.sound = UNNotificationSound.default
         
         // when the notification will be triggered
@@ -89,8 +88,8 @@ extension AppDelegate: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         if region is CLCircularRegion {
             self.handleEvent(forRegion: region)
-            // use service
-            self.viewModel.printMessage()
+            self.viewModel.getCounter()
+            self.viewModel.increaseCounter()
         }
     }
 }

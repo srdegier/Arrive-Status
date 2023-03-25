@@ -16,6 +16,8 @@
 		87B1AE0629C88D7200EFB175 /* GeofenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B1AE0529C88D7200EFB175 /* GeofenceModel.swift */; };
 		87B1AE0B29C8AD7400EFB175 /* CounterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B1AE0A29C8AD7400EFB175 /* CounterModel.swift */; };
 		87B1AE0D29C8ADD400EFB175 /* CounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B1AE0C29C8ADD400EFB175 /* CounterViewModel.swift */; };
+		87CA996629CF32060082CF97 /* SQLiteDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CA996529CF32060082CF97 /* SQLiteDatabaseManager.swift */; };
+		87CA996929CF36620082CF97 /* CounterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CA996829CF36620082CF97 /* CounterRepository.swift */; };
 		BE1A47EBAF074AC7108A1CEE /* Pods_Arrive_Status.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 330AA74B71E2F10A4EC5FA09 /* Pods_Arrive_Status.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +35,8 @@
 		87B1AE0529C88D7200EFB175 /* GeofenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofenceModel.swift; sourceTree = "<group>"; };
 		87B1AE0A29C8AD7400EFB175 /* CounterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterModel.swift; sourceTree = "<group>"; };
 		87B1AE0C29C8ADD400EFB175 /* CounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewModel.swift; sourceTree = "<group>"; };
+		87CA996529CF32060082CF97 /* SQLiteDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteDatabaseManager.swift; sourceTree = "<group>"; };
+		87CA996829CF36620082CF97 /* CounterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterRepository.swift; sourceTree = "<group>"; };
 		C23C538B8079630013F0D69F /* Pods-Arrive Status.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arrive Status.release.xcconfig"; path = "Target Support Files/Pods-Arrive Status/Pods-Arrive Status.release.xcconfig"; sourceTree = "<group>"; };
 		C4567E30CF97BCF3B1AC9794 /* Pods-Arrive Status.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arrive Status.debug.xcconfig"; path = "Target Support Files/Pods-Arrive Status/Pods-Arrive Status.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,6 +83,8 @@
 		871CA3D429B10042005C4F2A /* Arrive Status */ = {
 			isa = PBXGroup;
 			children = (
+				87CA996729CF33500082CF97 /* Repositories */,
+				87CA996429CF31D00082CF97 /* Managers */,
 				8789C16929CA60FF00DF4968 /* Arrive Status.entitlements */,
 				875F719E29B1681000A385F3 /* ViewModel */,
 				875F719D29B1680900A385F3 /* Model */,
@@ -126,6 +132,22 @@
 			path = Counter;
 			sourceTree = "<group>";
 		};
+		87CA996429CF31D00082CF97 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				87CA996529CF32060082CF97 /* SQLiteDatabaseManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		87CA996729CF33500082CF97 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				87CA996829CF36620082CF97 /* CounterRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 		F624BDB841B448A66B9FE947 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,7 +167,7 @@
 				871CA3CE29B10042005C4F2A /* Sources */,
 				871CA3CF29B10042005C4F2A /* Frameworks */,
 				871CA3D029B10042005C4F2A /* Resources */,
-				7F7FC2361F0B0A0E1CDD600A /* [CP] Embed Pods Frameworks */,
+				C4BCDE4D952A18E69780F88C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -225,7 +247,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7F7FC2361F0B0A0E1CDD600A /* [CP] Embed Pods Frameworks */ = {
+		C4BCDE4D952A18E69780F88C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -251,8 +273,10 @@
 			files = (
 				87B1AE0B29C8AD7400EFB175 /* CounterModel.swift in Sources */,
 				871CA3DA29B10042005C4F2A /* DashboardViewController.swift in Sources */,
+				87CA996929CF36620082CF97 /* CounterRepository.swift in Sources */,
 				871CA3D629B10042005C4F2A /* AppDelegate.swift in Sources */,
 				87B1AE0D29C8ADD400EFB175 /* CounterViewModel.swift in Sources */,
+				87CA996629CF32060082CF97 /* SQLiteDatabaseManager.swift in Sources */,
 				871CA3D829B10042005C4F2A /* SceneDelegate.swift in Sources */,
 				87B1AE0629C88D7200EFB175 /* GeofenceModel.swift in Sources */,
 			);

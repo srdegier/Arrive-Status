@@ -9,7 +9,12 @@ import Foundation
 
 struct Counter {
     
-    let title: String = "School"
-    let value: Int = 0
+    let title: String
+    let value: Int
+    
+    init(title: String, value: Int) {
+        self.title = title
+        self.value = value
+    }
 
 }
