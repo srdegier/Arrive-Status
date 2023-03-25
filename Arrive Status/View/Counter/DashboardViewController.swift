@@ -13,17 +13,26 @@ class DashboardViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var counterTitleLabel: UILabel!
     @IBOutlet weak var counterValueLabel: UILabel!
     
+    @IBOutlet weak var internetConnectivityView: UIView!
+    @IBOutlet weak var internetConnectivityLabel: UILabel!
+    
     lazy var locationManager = CLLocationManager()
     let counterViewModel = CounterViewModel.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Add observer for when counter is updated
         NotificationCenter.default.addObserver(self, selector: #selector(counterUpdated), name: NSNotification.Name ("counter.updated"), object: nil)
+        
+        // Start monitoring for internet connectivity
+        ConnectivityHelper.shared.startMonitoring()
+        
+        // Add observer for connectivityDidChange notification
+        NotificationCenter.default.addObserver(self, selector: #selector(connectivityDidChange(_:)), name: .connectivityDidChange, object: nil)
         
         self.title = "Dashboard"
 
-        
         self.locationManager.requestAlwaysAuthorization()
         
         // Your coordinates go here (lat, lon)
@@ -49,12 +58,40 @@ class DashboardViewController: UIViewController, CLLocationManagerDelegate {
         self.updateView()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Stop monitoring for internet connectivity when the view disappears
+        ConnectivityHelper.shared.stopMonitoring()
+    }
+    
     deinit {
-        NotificationCenter.default.removeObserver(self, name:NSNotification.Name("com.user.login.success"), object: nil)
+        NotificationCenter.default.removeObserver(self, name:NSNotification.Name("counter.updated"), object: nil)
     }
     
     @objc public func counterUpdated() {
         self.updateView()
+    }
+    
+    @objc func connectivityDidChange(_ notification: Notification) {
+        let isConnected = notification.object as! Bool
+        
+        if isConnected {
+            DispatchQueue.main.async {
+                self.internetConnectivityView.isHidden = false
+                self.internetConnectivityView.backgroundColor = .green
+                self.internetConnectivityLabel.text = "Online"
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.internetConnectivityView.isHidden = true
+                }
+            }
+        } else {
+            DispatchQueue.main.async {
+                self.internetConnectivityView.isHidden = false
+                self.internetConnectivityView.backgroundColor = .red
+                self.internetConnectivityLabel.text = "Offline"
+            }
+        }
     }
     
     public func updateView() {

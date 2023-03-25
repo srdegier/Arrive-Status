@@ -47,6 +47,23 @@
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fpi-Bd-nQD" secondAttribute="trailing" constant="20" symbolic="YES" id="gTq-Np-eVA"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Hc-Kk-SJk">
+                                <rect key="frame" x="0.0" y="757" width="375" height="21"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCZ-qn-3Zp">
+                                        <rect key="frame" x="166.66666666666666" y="0.0" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstItem="bCZ-qn-3Zp" firstAttribute="centerY" secondItem="6Hc-Kk-SJk" secondAttribute="centerY" id="Hsa-ot-fVU"/>
+                                    <constraint firstItem="bCZ-qn-3Zp" firstAttribute="centerX" secondItem="6Hc-Kk-SJk" secondAttribute="centerX" id="dk9-F7-xdr"/>
+                                    <constraint firstItem="bCZ-qn-3Zp" firstAttribute="height" secondItem="6Hc-Kk-SJk" secondAttribute="height" id="ypi-Pf-e3z"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="48Q-CI-UtT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -54,7 +71,10 @@
                             <constraint firstItem="8c5-zj-POg" firstAttribute="top" secondItem="48Q-CI-UtT" secondAttribute="top" id="52y-u9-8sA"/>
                             <constraint firstItem="iec-Nz-Uof" firstAttribute="centerX" secondItem="48Q-CI-UtT" secondAttribute="centerX" id="Bb3-ac-pJM"/>
                             <constraint firstItem="iec-Nz-Uof" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="48Q-CI-UtT" secondAttribute="leading" constant="70" id="EfH-P8-UeZ"/>
+                            <constraint firstItem="48Q-CI-UtT" firstAttribute="bottom" secondItem="6Hc-Kk-SJk" secondAttribute="bottom" id="G98-Mt-smq"/>
                             <constraint firstItem="8c5-zj-POg" firstAttribute="leading" secondItem="48Q-CI-UtT" secondAttribute="leading" id="Lr2-p9-ieh"/>
+                            <constraint firstItem="6Hc-Kk-SJk" firstAttribute="leading" secondItem="48Q-CI-UtT" secondAttribute="leading" id="Qhb-rv-PVx"/>
+                            <constraint firstItem="48Q-CI-UtT" firstAttribute="trailing" secondItem="6Hc-Kk-SJk" secondAttribute="trailing" id="j86-EX-tox"/>
                             <constraint firstItem="48Q-CI-UtT" firstAttribute="trailing" secondItem="8c5-zj-POg" secondAttribute="trailing" id="tlf-Ze-d5m"/>
                             <constraint firstItem="iec-Nz-Uof" firstAttribute="top" secondItem="48Q-CI-UtT" secondAttribute="top" constant="40" id="tpy-xV-nuS"/>
                             <constraint firstItem="48Q-CI-UtT" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="iec-Nz-Uof" secondAttribute="trailing" constant="70" id="wqQ-Ly-pXz"/>
@@ -64,6 +84,8 @@
                     <connections>
                         <outlet property="counterTitleLabel" destination="fpi-Bd-nQD" id="MNv-sB-xMA"/>
                         <outlet property="counterValueLabel" destination="QhL-eC-107" id="YJL-gR-eJK"/>
+                        <outlet property="internetConnectivityLabel" destination="bCZ-qn-3Zp" id="2YV-2F-jw1"/>
+                        <outlet property="internetConnectivityView" destination="6Hc-Kk-SJk" id="RBE-gf-Yzo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nfn-9j-XyC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -98,6 +120,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
