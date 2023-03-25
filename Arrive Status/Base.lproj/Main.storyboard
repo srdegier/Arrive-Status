@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Destinations-->
+        <!--Dashboard-->
         <scene sceneID="Sdu-rR-7Pk">
             <objects>
-                <viewController storyboardIdentifier="CounterViewController" id="OUw-SZ-gVT" customClass="CounterViewController" customModule="Arrive_Status" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DashboardViewController" id="OUw-SZ-gVT" customClass="DashboardViewController" customModule="Arrive_Status" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4i4-7F-fVw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,16 +20,48 @@
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8c5-zj-POg">
                                 <rect key="frame" x="0.0" y="143" width="375" height="44"/>
                             </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iec-Nz-Uof">
+                                <rect key="frame" x="87.666666666666686" y="183" width="200" height="200"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="School" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpi-Bd-nQD">
+                                        <rect key="frame" x="20" y="20.000000000000004" width="63" height="34.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhL-eC-107">
+                                        <rect key="frame" x="49.666666666666679" y="64.333333333333343" width="100.33333333333331" height="71.666666666666657"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="0Qp-dS-O6T"/>
+                                    <constraint firstItem="QhL-eC-107" firstAttribute="centerX" secondItem="iec-Nz-Uof" secondAttribute="centerX" id="1ob-e1-rLA"/>
+                                    <constraint firstItem="fpi-Bd-nQD" firstAttribute="top" secondItem="iec-Nz-Uof" secondAttribute="top" constant="20" id="9Pk-lp-UOs"/>
+                                    <constraint firstItem="QhL-eC-107" firstAttribute="centerY" secondItem="iec-Nz-Uof" secondAttribute="centerY" id="BBd-x5-Ibn"/>
+                                    <constraint firstItem="fpi-Bd-nQD" firstAttribute="leading" secondItem="iec-Nz-Uof" secondAttribute="leading" constant="20" id="G4g-x3-dI3"/>
+                                    <constraint firstItem="QhL-eC-107" firstAttribute="top" secondItem="fpi-Bd-nQD" secondAttribute="bottom" constant="10" id="R3Z-ya-r3s"/>
+                                    <constraint firstAttribute="height" constant="200" id="eNB-jl-O8r"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fpi-Bd-nQD" secondAttribute="trailing" constant="20" symbolic="YES" id="gTq-Np-eVA"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="48Q-CI-UtT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="8c5-zj-POg" firstAttribute="top" secondItem="48Q-CI-UtT" secondAttribute="top" id="52y-u9-8sA"/>
+                            <constraint firstItem="iec-Nz-Uof" firstAttribute="centerX" secondItem="48Q-CI-UtT" secondAttribute="centerX" id="Bb3-ac-pJM"/>
+                            <constraint firstItem="iec-Nz-Uof" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="48Q-CI-UtT" secondAttribute="leading" constant="70" id="EfH-P8-UeZ"/>
                             <constraint firstItem="8c5-zj-POg" firstAttribute="leading" secondItem="48Q-CI-UtT" secondAttribute="leading" id="Lr2-p9-ieh"/>
                             <constraint firstItem="48Q-CI-UtT" firstAttribute="trailing" secondItem="8c5-zj-POg" secondAttribute="trailing" id="tlf-Ze-d5m"/>
+                            <constraint firstItem="iec-Nz-Uof" firstAttribute="top" secondItem="48Q-CI-UtT" secondAttribute="top" constant="40" id="tpy-xV-nuS"/>
+                            <constraint firstItem="48Q-CI-UtT" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="iec-Nz-Uof" secondAttribute="trailing" constant="70" id="wqQ-Ly-pXz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Destinations" id="nbQ-PI-dIC">
+                    <navigationItem key="navigationItem" title="Dashboard" id="nbQ-PI-dIC">
                         <barButtonItem key="rightBarButtonItem" title="Add Destination" image="plus" catalog="system" id="981-cM-vUj" userLabel="Add Destination">
                             <connections>
                                 <action selector="addDestinationButtonPressed:" destination="OUw-SZ-gVT" id="8ME-yS-eMq"/>
@@ -40,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nfn-9j-XyC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1287" y="-805"/>
+            <point key="canvasLocation" x="1285.5999999999999" y="-805.41871921182269"/>
         </scene>
         <!--Add Destination-->
         <scene sceneID="GuB-za-vuD">
@@ -112,6 +144,9 @@
     </scenes>
     <resources>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
