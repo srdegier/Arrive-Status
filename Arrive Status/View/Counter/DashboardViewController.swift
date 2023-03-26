@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreLocation
+import CloudKit
 
 class DashboardViewController: UIViewController, CLLocationManagerDelegate {
     
@@ -46,7 +47,7 @@ class DashboardViewController: UIViewController, CLLocationManagerDelegate {
          choose a unique identifier for that region */
         let geofenceRegion = CLCircularRegion(
             center: geofenceRegionCenter,
-            radius: 500,
+            radius: 150,
             identifier: "School"
         )
         
@@ -56,12 +57,11 @@ class DashboardViewController: UIViewController, CLLocationManagerDelegate {
         self.locationManager.startMonitoring(for: geofenceRegion)
         
         self.updateView()
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
-        // Stop monitoring for internet connectivity when the view disappears
         ConnectivityHelper.shared.stopMonitoring()
     }
     
@@ -95,10 +95,10 @@ class DashboardViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     public func updateView() {
-        self.counterViewModel.getCounter()
-        
-        self.counterTitleLabel.text = self.counterViewModel.title
-        self.counterValueLabel.text = String(self.counterViewModel.value)
+        self.counterViewModel.fetchCounter {
+            self.counterTitleLabel.text = self.counterViewModel.title
+            self.counterValueLabel.text = String(self.counterViewModel.value)
+        }
     }
         
     override func didReceiveMemoryWarning() {

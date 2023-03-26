@@ -27,6 +27,7 @@ class SQLiteDatabaseManager {
     }
     
     public func deleteDatabase() {
+        print("!@ verwijderen")
         let fileManager = FileManager.default
         let documentsURL = try! fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
         let databaseURL = documentsURL.appendingPathComponent("database.sqlite")

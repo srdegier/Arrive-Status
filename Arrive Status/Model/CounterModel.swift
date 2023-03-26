@@ -11,10 +11,13 @@ struct Counter {
     
     let title: String
     let value: Int
+    let isSynced: Bool?
     
-    init(title: String, value: Int) {
+    init(title: String, value: Int, isSynced: Bool? = nil) {
         self.title = title
         self.value = value
+        self.isSynced = isSynced
     }
 
 }
+

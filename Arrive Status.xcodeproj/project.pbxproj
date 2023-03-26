@@ -19,6 +19,7 @@
 		87CA996629CF32060082CF97 /* SQLiteDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CA996529CF32060082CF97 /* SQLiteDatabaseManager.swift */; };
 		87CA996929CF36620082CF97 /* CounterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CA996829CF36620082CF97 /* CounterRepository.swift */; };
 		87CA996C29CF93F50082CF97 /* ConnectivityHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CA996B29CF93F50082CF97 /* ConnectivityHelper.swift */; };
+		87CA996F29D077A60082CF97 /* CounterApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CA996E29D077A60082CF97 /* CounterApi.swift */; };
 		BE1A47EBAF074AC7108A1CEE /* Pods_Arrive_Status.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 330AA74B71E2F10A4EC5FA09 /* Pods_Arrive_Status.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		87CA996529CF32060082CF97 /* SQLiteDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteDatabaseManager.swift; sourceTree = "<group>"; };
 		87CA996829CF36620082CF97 /* CounterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterRepository.swift; sourceTree = "<group>"; };
 		87CA996B29CF93F50082CF97 /* ConnectivityHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityHelper.swift; sourceTree = "<group>"; };
+		87CA996E29D077A60082CF97 /* CounterApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterApi.swift; sourceTree = "<group>"; };
 		C23C538B8079630013F0D69F /* Pods-Arrive Status.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arrive Status.release.xcconfig"; path = "Target Support Files/Pods-Arrive Status/Pods-Arrive Status.release.xcconfig"; sourceTree = "<group>"; };
 		C4567E30CF97BCF3B1AC9794 /* Pods-Arrive Status.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arrive Status.debug.xcconfig"; path = "Target Support Files/Pods-Arrive Status/Pods-Arrive Status.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,6 +87,7 @@
 		871CA3D429B10042005C4F2A /* Arrive Status */ = {
 			isa = PBXGroup;
 			children = (
+				87CA996D29D077870082CF97 /* Api */,
 				87CA996A29CF93DD0082CF97 /* Helper */,
 				87CA996729CF33500082CF97 /* Repositories */,
 				87CA996429CF31D00082CF97 /* Managers */,
@@ -157,6 +160,14 @@
 				87CA996B29CF93F50082CF97 /* ConnectivityHelper.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		87CA996D29D077870082CF97 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				87CA996E29D077A60082CF97 /* CounterApi.swift */,
+			);
+			path = Api;
 			sourceTree = "<group>";
 		};
 		F624BDB841B448A66B9FE947 /* Frameworks */ = {
@@ -285,6 +296,7 @@
 				87B1AE0B29C8AD7400EFB175 /* CounterModel.swift in Sources */,
 				871CA3DA29B10042005C4F2A /* DashboardViewController.swift in Sources */,
 				87CA996929CF36620082CF97 /* CounterRepository.swift in Sources */,
+				87CA996F29D077A60082CF97 /* CounterApi.swift in Sources */,
 				87CA996C29CF93F50082CF97 /* ConnectivityHelper.swift in Sources */,
 				871CA3D629B10042005C4F2A /* AppDelegate.swift in Sources */,
 				87B1AE0D29C8ADD400EFB175 /* CounterViewModel.swift in Sources */,

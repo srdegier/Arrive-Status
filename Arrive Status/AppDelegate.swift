@@ -88,7 +88,6 @@ extension AppDelegate: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         if region is CLCircularRegion {
             self.handleEvent(forRegion: region)
-            self.viewModel.getCounter()
             self.viewModel.increaseCounter()
         }
     }

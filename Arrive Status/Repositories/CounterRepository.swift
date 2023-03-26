@@ -17,12 +17,14 @@ class CounterRepository {
     let id = Expression<Int64>("id")
     let title = Expression<String>("title")
     let value = Expression<Int64>("value")
+    let isSynced = Expression<Bool>("isSynced")
     
     init() {
         guard let db = sqliteDatabaseManager.db else {
             fatalError("No database connection found")
         }
         self.db = db
+        print("!@init")
         self.createTable()
     }
     
@@ -32,6 +34,7 @@ class CounterRepository {
                 table.column(id, primaryKey: true)
                 table.column(title)
                 table.column(value, unique: true)
+                table.column(isSynced, unique: true)
             })
             // create row for counter
             self.addCounter()
@@ -41,16 +44,25 @@ class CounterRepository {
     }
     // doe hier nog de title meegeven
     internal func addCounter() {
+        print ("!@ nieuwe counter")
         do {
-            let rowid = try self.db.run(counter.insert(value <- 0, title <- "School"))
+            let rowid = try self.db.run(counter.insert(value <- 0, title <- "School", isSynced <- true))
         } catch {
             print("!@insertion failed: \(error)")
         }
     }
     
-    public func updateCounterValue(increment: Int64) {
+    public func updateCounterValue(increment: Int64, _isSynced: Bool) {
         do {
-            try db.run(counter.update(value <- increment))
+            try db.run(counter.update(value <- increment, isSynced <- _isSynced))
+        } catch {
+            print("Error: \(error)")
+        }
+    }
+    
+    public func updateCounterIsSynced() {
+        do {
+            try db.run(counter.update(isSynced <- true))
         } catch {
             print("Error: \(error)")
         }
@@ -60,10 +72,12 @@ class CounterRepository {
         do {
             let titleExpression = Expression<String>("title")
             let valueExpression = Expression<Int>("value")
-            if let counter = try db.pluck(counter.select(titleExpression, valueExpression)) {
+            let isSyncedExpression = Expression<Bool>("isSynced")
+            if let counter = try db.pluck(counter.select(titleExpression, valueExpression, isSyncedExpression)) {
                 let title = counter[titleExpression]
                 let value = counter[valueExpression]
-                return Counter(title: title, value: value)
+                let isSynced = counter[isSyncedExpression]
+                return Counter(title: title, value: value, isSynced: isSynced)
             } else {
                 return nil // Counter-rij bestaat niet in de database
             }
@@ -73,5 +87,4 @@ class CounterRepository {
             return nil
         }
     }
-
 }
